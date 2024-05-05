@@ -8,12 +8,13 @@ from pynput.mouse import Button, Controller as MouseController
 
 
 def edit_macro_file():
-    if os.path.exists('macro.exe'):
-        return
-    with open('macro.exe', 'w') as f:
-        f.write("# Edit your macro here\n# Each line should contain a key and its duration separated by a space\n# Example: a 0.5\n# To simulate a mouse click, use 'click'\n")
-        f.close() # To avoid data leak
-    os.system('notepad.exe macro.exe')
+    if not os.path.exists('macro.exe'):
+        with open('macro.exe', 'w') as f:
+            f.write("# Edit your macro here\n# Each line should contain a key and its duration separated by a space\n# Example: a 0.5\n# To simulate a mouse click, use 'click'\n")
+            f.close() # To avoid data leak
+            os.system('notepad.exe macro.exe')
+    else:
+        os.system('notepad.exe macro.exe')
 
 
 def start_macro():
