@@ -1,0 +1,5 @@
+# Edit your macro here
+# Each line should contain a key and its duration separated by a space
+# Example: a 0.5
+# To simulate a mouse click, use 'click'
+click
