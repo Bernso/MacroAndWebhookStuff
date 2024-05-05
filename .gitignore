@@ -2,3 +2,5 @@
 /build
 /main.spec
 /specs
+/dist/discordWebhook.exe
+/dist/macro.exe
