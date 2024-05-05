@@ -25,11 +25,11 @@ def start_macro():
     with open(file_path, 'r') as file:
         lines = file.readlines()
         file.close()  # To avoid data leak
-        buttons = ['backspace', 'tab', 'enter', 'escape', 'delete', 'home', 'end', 'insert', 'left', 'right', 'down', 'up', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10', 'f11', 'f12', 'shift', 'ctrl', 'alt', 'pause', 'caps_lock','scroll_lock', 'page_up', 'page_down', 'num_lock', 'print_screen']
+        buttons = ['backspace', 'tab', 'return', 'escape', 'delete', 'home', 'end', 'inseart', 'left', 'right', 'down', 'up', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10', 'f11', 'f12', 'shift', 'ctrl', 'alt', 'pause', 'caps_lock','scroll_lock', 'page_up', 'page_down', 'num_lock', 'print_screen']
 
         for line in lines:
             line = line.strip()  # Remove leading/trailing whitespace
-            if line:  # Ignore empty lines
+            if line and not line.startswith('#'):  # Ignore empty lines and comments
                 if line.lower() == 'click':
                     mouse.click(Button.left)
                     
@@ -74,6 +74,7 @@ def start_macro():
                             time.sleep(duration)
                         except ValueError:
                             print(f"Ignoring line: {line} - Invalid format")
+
                             
                             
 def full_macro():
@@ -182,6 +183,7 @@ def save_discord_webhook():
 app = tk.Tk()
 app.geometry("290x230")
 app.title("Macro Manager by Bernso")
+
 
 
 # Create a Notebook (tabs)
