@@ -206,11 +206,14 @@ helpButton.place(x=180, y=15, width=100, height=20)
 edit_button = tk.Button(macro_tab, text="Edit Macro", command=edit_macro_file)
 edit_button.grid(column=0, row=1, padx=10, pady=10, sticky="ew")
 
+numberOfTimesToRunLabel = tk.Label(macro_tab, text="Number of times to run macro")
+numberOfTimesToRunLabel.grid(column=0, row=2, padx=10, pady=0, sticky='w')
+
 timesToComplete = tk.Entry(macro_tab, textvariable="Number of times for macro to run", width=45)
-timesToComplete.grid(column=0, row=2, padx=10, pady=10, sticky="ew")
+timesToComplete.grid(column=0, row=3, padx=10, pady=10, sticky="ew")
 
 start_button = tk.Button(macro_tab, text="Start Macro", command=full_macro)
-start_button.grid(column=0, row=3, padx=10, pady=10, sticky="ew")
+start_button.grid(column=0, row=4, padx=10, pady=10, sticky="ew")
 
 
 # Discord tab
